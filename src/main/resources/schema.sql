@@ -32,3 +32,23 @@ CREATE TABLE amigos (
     FOREIGN KEY (destinatario_id) REFERENCES estudante(id),
 
 );
+
+CREATE TABLE localizacao_atual (
+    estudante_id INT PRIMARY KEY,
+    latitude DOUBLE NOT NULL,
+    longitude DOUBLE NOT NULL,
+    ultima_atualizacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (estudante_id) REFERENCES estudante(id)
+);
+
+CREATE TABLE compartilhamento_localizacao (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    estudante_id INT NOT NULL,
+    amigo_id INT NOT NULL,
+    ativo BOOLEAN DEFAULT TRUE,
+
+    FOREIGN KEY (estudante_id) REFERENCES estudante(id),
+    FOREIGN KEY (amigo_id) REFERENCES estudante(id)
+
+);
