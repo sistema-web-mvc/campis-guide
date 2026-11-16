@@ -31,3 +31,22 @@ INSERT INTO local (nome, tipo, andar) VALUES
 (Sala_professores, Sala, 1),
 (CAE, Secretaria, 1),
 (CAPNE, Secretaria, 1);
+
+
+INSERT INTO estudante (nome, matricula, email, senha, curso) VALUES
+("Laila", 14486152670, laila.alves@estudante.iftm.edu.br, laila123, Sistemas para Internet),
+("Matheus", 14587159640, matheus.roldao@estudante.iftm.edu.br, matheus123, Sistemas para Internet),
+("Lazaro", 12365489752, lazaro.araujo@estudante.iftm.edu.br, lazaro123, Sistemas para Internet),
+("Gabriel", 14589632175, gabriel.st@estudante.iftm.edu.br, gabriel123, Sistemas para Internet),
+("Victor", 18879456238, victor.caua@estudante.iftm.edu.br, victor123, Sistemas para Internet);
+
+INSERT INTO caminho (origem, destino, distancia) VALUES
+(-, -, -);
+
+INSERT INTO amigos (solicitante_id, destinatario_id, status, data_solicitacao) VALUES
+(-, -, 'ACEITA', 2026-11-06),
+(-, -, 'ENVIADA', 2026-10-26),
+(-, -, 'ACEITA', 2026-01-03),
+(-, -, 'PENDENTE', 2026-08-20),
+(-, -, 'ACEITA', 2026-07-19),
+(-, -, 'PENDENTE', 2026-05-25);
