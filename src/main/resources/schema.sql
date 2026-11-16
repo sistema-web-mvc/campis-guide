@@ -10,6 +10,9 @@ CREATE TABLE caminho (
     origem           integer   NOT NULL,
     destino            integer  NOT NULL,
     distancia            integer    NOT NULL
+
+    FOREIGN KEY (local_id) REFERENCES local(id),
+    FOREIGN KEY (local_id) REFERENCES local(id)
 );
 
 CREATE TABLE estudante (
@@ -26,10 +29,10 @@ CREATE TABLE amigos (
     solicitate_id           VARCHAR(100)   NOT NULL,
     destinario_id       VARCHAR(100)   NOT NULL,
     status            VARCHAR(100)   NOT NULL,
-    data_solicitacao           date   NOT NULL
+    data_solicitacao           date   NOT NULL,
 
     FOREIGN KEY (solicitante_id) REFERENCES estudante(id),
-    FOREIGN KEY (destinatario_id) REFERENCES estudante(id),
+    FOREIGN KEY (destinatario_id) REFERENCES estudante(id)
 
 );
 
