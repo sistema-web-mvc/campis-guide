@@ -1,9 +1,10 @@
-
+```html
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Estudantes - Campus Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudantes - Campus Guide</title>
 
     <style>
         * {
@@ -140,43 +141,72 @@
         }
     </style>
 </head>
+
 <body>
 
-    <h1>Estudantes cadastrados</h1>
+    <header>
+        <h1>Campus Guide</h1>
+        <span>Estudantes</span>
+    </header>
 
-    <form th:action="@{/estudantes}" method="get">
-        <input type="text" name="busca"
-               placeholder="Buscar estudante..."
-               th:value="${busca}">
+    <div class="container">
 
-        <button type="submit">Buscar</button>
-    </form>
+        <div class="titulo">
+            <h2>Estudantes cadastrados</h2>
+            <p>Consulte os estudantes do campus.</p>
+        </div>
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Matrícula</th>
-                <th>E-mail</th>
-                <th>Curso</th>
-            </tr>
-        </thead>
+        <div class="busca">
+            <form th:action="@{/estudantes}" method="get">
 
-        <tbody>
-            <tr th:each="estudante : ${estudantes}">
-                <td th:text="${estudante.id}"></td>
-                <td th:text="${estudante.nome}"></td>
-                <td th:text="${estudante.matricula}"></td>
-                <td th:text="${estudante.email}"></td>
-                <td th:text="${estudante.curso}"></td>
-            </tr>
-        </tbody>
-    </table>
+                <input type="text"
+                       name="busca"
+                       placeholder="Buscar estudante..."
+                       th:value="${busca}">
 
-    <p th:if="${#lists.isEmpty(estudantes)}">
-        Nenhum estudante encontrado.
-    </p>
+                <button type="submit">Buscar</button>
+
+            </form>
+        </div>
+
+        <div class="tabela-container">
+
+            <h3>Lista de estudantes</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Matrícula</th>
+                        <th>E-mail</th>
+                        <th>Curso</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr th:each="estudante : ${estudantes}">
+                        <td th:text="${estudante.id}"></td>
+                        <td th:text="${estudante.nome}"></td>
+                        <td th:text="${estudante.matricula}"></td>
+                        <td th:text="${estudante.email}"></td>
+                        <td th:text="${estudante.curso}"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="vazio" th:if="${#lists.isEmpty(estudantes)}">
+                Nenhum estudante encontrado.
+            </p>
+
+        </div>
+
+    </div>
+
+    <footer>
+        Campus Guide - Guia do Campus
+    </footer>
 
 </body>
 </html>
+```
