@@ -1,14 +1,15 @@
-package com.campisguide.repository;
+package br.edu.iftm.campisguide.Repository;
 
-import com.campisguide.model.Estudante;
-import lombok.RequiredArgsConstructor;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-import java.util.Optional;
+import br.edu.iftm.campisguide.Model.Estudante;
+import lombok.RequiredArgsConstructor;
 
 @Repository
 @RequiredArgsConstructor
