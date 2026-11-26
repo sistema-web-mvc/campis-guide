@@ -30,9 +30,11 @@ CREATE TABLE localizacao_atual (
     estudante_id BIGINT PRIMARY KEY,
     latitude DOUBLE NOT NULL,
     longitude DOUBLE NOT NULL,
-    ultima_atualizacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+    ultima_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
     FOREIGN KEY (estudante_id) REFERENCES estudante(id)
 );
+
+
 
 

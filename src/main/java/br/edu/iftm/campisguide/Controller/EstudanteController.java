@@ -1,14 +1,13 @@
+package br.edu.iftm.campisguide.Controller;
 
-package com.campisguide.controller;
+import br.edu.iftm.campisguide.Model.Estudante;
+import br.edu.iftm.campisguide.Service.EstudanteService;
 
-import com.campisguide.model.Estudante;
-import com.campisguide.service.EstudanteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 @Controller
 @RequestMapping("/estudantes")
 @RequiredArgsConstructor
