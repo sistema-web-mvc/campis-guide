@@ -15,7 +15,7 @@ public class EstudanteController {
 
     private final EstudanteService estudanteService;
 
-    @GetMapping
+    @GetMapping("/listar")
     public String listar(@RequestParam(required = false) String busca, Model model) {
         model.addAttribute("estudantes", estudanteService.listar(busca));
         model.addAttribute("busca", busca);
