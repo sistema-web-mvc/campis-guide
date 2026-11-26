@@ -40,3 +40,46 @@ INSERT INTO estudante (nome, matricula, email, senha, curso) VALUES
 ('Gabriel', '14589632175', 'gabriel.st@estudante.iftm.edu.br', 'gabriel123', 'Sistemas para Internet'),
 ('Victor', '18879456238', 'victor.caua@estudante.iftm.edu.br', 'victor123', 'Sistemas para Internet');
 
+
+
+INSERT INTO caminho (origem, destino, distancia) VALUES
+-- Como os IDs são gerados automaticamente pelo AUTO_INCREMENT, considerando que você executou o cadastro dos locais na ordem que enviou, eles serão de 1 a 32.
+-- Sala dos professores <-> Laboratório 1
+(30, 24, 92),
+(24, 30, 92),
+
+-- Laboratório 1 <-> Laboratório 2
+(24, 25, 1107),
+(25, 24, 1107),
+
+-- Laboratório 2 <-> Laboratório 3
+(25, 26, 106),
+(26, 25, 106),
+
+-- Laboratório 3 <-> Laboratório 4
+(26, 27, 606),
+(27, 26, 606),
+
+-- Biblioteca <-> Banheiro PCD
+(8, 11, 391),
+(11, 8, 391),
+
+-- Banheiro PCD <-> Banheiro feminino
+(11, 9, 363),
+(9, 11, 363),
+
+-- Banheiro feminino <-> Banheiro masculino
+(9, 10, 90),
+(10, 9, 90),
+
+-- Cantina <-> Laboratório 1
+(5, 24, 2150),
+(24, 5, 2150),
+
+-- Cantina <-> Diretoria
+(5, 6, 2280),
+(6, 5, 2280),
+
+-- Cantina <-> Banheiro PCD
+(5, 11, 2120),
+(11, 5, 2120);
