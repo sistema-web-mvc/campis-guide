@@ -14,7 +14,7 @@ public class EstudanteController {
 
     private final EstudanteService estudanteService;
 
-    @GetMapping
+    @GetMapping("/listar")
     public String listar(@RequestParam(required = false) String busca, Model model) {
         model.addAttribute("estudantes", estudanteService.listar(busca));
         model.addAttribute("busca", busca);
@@ -29,7 +29,7 @@ public class EstudanteController {
 
     @PostMapping("/salvar")
     public String salvar(@ModelAttribute("estudante") Estudante estudante,
-                         RedirectAttributes redirectAttributes) {
+                        RedirectAttributes redirectAttributes) {
 
         boolean novo = estudante.getId() == null;
 
