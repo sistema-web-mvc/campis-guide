@@ -1,13 +1,13 @@
 
-package br.edu.iftm.campisguide.Service;
+package br.edu.iftm.campisguide.service;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import br.edu.iftm.campisguide.Model.Estudante;
-import br.edu.iftm.campisguide.Repository.EstudanteRepository;
+import br.edu.iftm.campisguide.model.Estudante;
+import br.edu.iftm.campisguide.repository.EstudanteRepository;
 import lombok.RequiredArgsConstructor;
 
 @Service

@@ -1,4 +1,4 @@
-package br.edu.iftm.campisguide.Repository;
+package br.edu.iftm.campisguide.repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import br.edu.iftm.campisguide.Model.Estudante;
+import br.edu.iftm.campisguide.model.Estudante;
 import lombok.RequiredArgsConstructor;
 
 @Repository
@@ -47,6 +47,21 @@ public class EstudanteRepository {
         String sql = "SELECT id, nome, matricula, email, senha, curso FROM estudante WHERE id = ?";
         try {
             Estudante estudante = jdbcTemplate.queryForObject(sql, rowMapper, id);
+            return Optional.ofNullable(estudante);
+        } catch (EmptyResultDataAccessException e) {
+            return Optional.empty();
+        }
+    }
+
+
+    // BUSCAR POR E-MAIL PARA VALIDAR O LOGIN
+    public Optional<Estudante> buscarPorEmail(String email) {
+        String sql = "SELECT id, nome, matricula, email, senha, curso " +
+                     "FROM estudante WHERE LOWER(email) = LOWER(?)";
+        try {
+            Estudante estudante = jdbcTemplate.queryForObject(
+                    sql, rowMapper, email.trim()
+            );
             return Optional.ofNullable(estudante);
         } catch (EmptyResultDataAccessException e) {
             return Optional.empty();
