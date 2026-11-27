@@ -1,4 +1,4 @@
-package br.edu.iftm.campisguide.Model;
+package br.edu.iftm.campisguide.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

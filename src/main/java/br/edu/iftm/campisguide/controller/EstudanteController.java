@@ -1,8 +1,7 @@
-package br.edu.iftm.campisguide.Controller;
+package br.edu.iftm.campisguide.controller;
 
-import br.edu.iftm.campisguide.Model.Estudante;
-import br.edu.iftm.campisguide.Service.EstudanteService;
-
+import br.edu.iftm.campisguide.model.Estudante;
+import br.edu.iftm.campisguide.service.EstudanteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,12 +36,16 @@ public class EstudanteController {
         estudanteService.salvar(estudante);
 
         if (novo) {
-            redirectAttributes.addFlashAttribute("mensagem", "Estudante cadastrado com sucesso!");
+            redirectAttributes.addFlashAttribute(
+                    "mensagem", "Cadastro realizado com sucesso! Faça login para continuar."
+            );
+            return "redirect:/login";
         } else {
-            redirectAttributes.addFlashAttribute("mensagem", "Estudante atualizado com sucesso!");
+            redirectAttributes.addFlashAttribute(
+                    "mensagem", "Estudante atualizado com sucesso!"
+            );
+            return "redirect:/estudantes";
         }
-
-        return "redirect:/estudantes";
     }
 
     @GetMapping("/editar/{id}")
@@ -73,4 +76,7 @@ public class EstudanteController {
 
         return "redirect:/estudantes";
     }
+
+
+    
 }
